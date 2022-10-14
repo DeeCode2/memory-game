@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+
 * {
     padding: 0;
     margin: 0;
@@ -9,6 +11,7 @@ body {
     height: 100vh;
     align-items: center;
     background-color: palevioletred;
+    font-family: 'Helvetica Neue', sans-serif;
 }
 
 #modal {
@@ -21,11 +24,48 @@ body {
     width: 100vw;
     height: 100vh;
     backdrop-filter: blur(6px);
+    transition: .3s;
 }
 
 #modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 500px;
+    height: 400px;
     padding: 3.5em;
-    background-color: aliceblue;
+    border-radius: 1.5em;
+    background-color: rgb(255, 255, 255);
+    border: solid 1px rgb(232, 232, 232);
+}
+
+h1, #score {
+    font-size: 4.5em;
+    font-family: 'Amatic SC', cursive;
+}
+
+#score {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+button {
+    margin: .5em;
+    padding: 1em;
+    border: solid 1px rgb(59, 172, 216);
+    border-radius: .5em;
+    background-color: skyblue;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: .3s;
+    box-shadow: 2px 2px 2px rgb(194, 194, 194);
+}
+
+button:hover {
+    transform: translateY(-5px);
+    box-shadow: 5px 5px 5px rgb(194, 194, 194);
 }
 
 #grid {
@@ -48,10 +88,17 @@ body {
     transition: transform .5s;
 }
 
+.card:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+}
+
 .front, .back {
     width: 100%;
     position: absolute;
     height: 100%;
+    border-radius: .5em;
+    border: double .6em;
     object-fit: contain;
     object-position: center;
     background-color: antiquewhite;
@@ -60,8 +107,10 @@ body {
 }
 
 .front {
-    transform: rotateY(180deg)
+    transform: rotateY(180deg);
+    background-color: skyblue;
 }
+
 
 .card.flip {
     transform: rotateY(180deg);

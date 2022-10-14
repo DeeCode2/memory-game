@@ -20,7 +20,6 @@ function flipCard() {
     firstCard = this;
     return;
   }
-
   secondCard = this;
   matchCard();
 }
@@ -83,6 +82,12 @@ function resetGrid() {
     card.style.order = ramdomPos;
   });
 })(); //function is an immediately invoked function and shuffles the card after loading
+
+
+//reload the page when the user clicks play again
+function newGame(){
+  window.location.reload();
+} 
 
 //add eventlistener to all cards on grid
 cards.forEach((card) => card.addEventListener("click", flipCard));
